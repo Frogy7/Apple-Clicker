@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Apple Clicker</title>
+        <script>
+
+        </script>
+        <style>
+            body{
+                background-image: url(Trawa.png);
+            }
+            #GameName{
+                margin-bottom: 25px;
+                width: 300px;
+                height: 60px;
+                border-style: solid;
+                border-radius: 20px;
+                background-color: white;
+                font-size: 50px;
+            }
+            #Punkty{
+                width: 150px;
+                height: 35px;
+                margin-top: 25px;
+                font-size: 30px;
+                border-style: solid;
+                border-color: black;
+                background-color: white;
+                border-radius: 12px;
+            }
+            #Apple{
+                border: none;
+                background: none;
+                background-image: url(Apple.png);
+                width: 460px;
+                height: 450px;
+                cursor: pointer;
+                margin-bottom: 30px;
+            }
+            #Upgrade1{
+                margin-top: 25px;
+                border-radius: 20px;
+                width: 300px;
+                height: 100px;
+                font-size: 40px;
+                cursor: pointer;
+            }
+            #Win{
+                margin-top: 20px;
+                border-radius: 20px;
+                width: 300px;
+                height: 100px;
+                font-size: 40px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <center><div id="GameName">Apple Clicker</div>
+        <div onclick="licznik()" id="Apple"></div><br>
+        <div id="Punkty">0</div>
+        <button onclick="Upgrade()" id="Upgrade1">upgrade +1:100</button><br>
+        <button onclick="Win()" id="Win">You need to win: 1000000</button><br></center>
+        <script>
+            var x=1
+            var Punkty=0;
+            var u1 = 100;
+            function licznik(){
+                Punkty=Punkty+=x
+                document.getElementById("Punkty").innerHTML = Punkty;
+            }
+            function Upgrade(){
+                if(Punkty>=u1){
+                    Punkty=Punkty-u1
+                    x=x+1
+                    u1+=100
+                }
+                document.getElementById("Upgrade1").innerHTML = "upgrade +1:" + u1;
+                document.getElementById("Punkty").innerHTML = Punkty; 
+            }
+            function Win(){
+                if(Punkty>=1000000){
+                    alert("YOU WIN")
+                }
+            }
+        </script>
+    </body>
+</html>
